@@ -7,7 +7,7 @@ import pprint
 # creating a variable with image location
 photo = 'person.jpg'
 
-# calling client method by passing arguments like service names,access key, id and token adnd make instance of it
+# calling client method by passing arguments like service names,access key, id and token and make instance of it.
 client = boto3.client('rekognition',
                       aws_access_key_id=aws_access_key_id,
                       aws_secret_access_key=aws_secret_access_key, aws_session_token=aws_session_token, region_name='us-east-1')
@@ -37,7 +37,7 @@ for k, v in response.items():
                   people['AgeRange']['Low'], '-', people['AgeRange']['High'])
             print('\t\tsimiling: ',
                   people['Smile']['Value'], '-', people['Smile']['Confidence'], '%')
-            print('\t\tappears to be: ',
+            print('\t\tEmotion state : ',
                   people['Emotions'][0]['Type'], '-', people['Emotions'][0]['Confidence'], '%')
             print('\t\twearing glasses: ',
                   people['Sunglasses']['Value']
